@@ -10,16 +10,16 @@ public class Main {
         Scanner input = new Scanner(System.in);
         boolean error = true;
         System.out.print("What is the rate of return? ");
-        int rate = input.nextInt();
+        int rate;
         while (error) {
-            if (input.hasNextInt()) {
+            rate = input.nextInt();
+            if (rate > 0) {
                 int years = 72 / rate;
                 System.out.printf("It will take %d years to double your initial investment.", years);
                 error = false;
             }
             else {
                 System.out.print("Sorry. that's not a valid input.\nWhat is the rate of return? ");
-                input.next();
             }
         }
     }
